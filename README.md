@@ -1,18 +1,24 @@
 # S30 - Módulo 4. Actividad didáctica 2
+## Descripción General
+Este script simula el flujo de vehículos en las salidas del centro comercial Supercentro durante una jornada de 8 horas. El sistema modela 3 cajeros independientes trabajando en paralelo. Los conductores tienen 4 perfiles diferentes (desde rápidos hasta muy lentos), lo que genera una mezcla de tiempos de servicio. El script ejecuta 100 réplicas de esta jornada y utiliza una semilla fija (2026) para que los resultados sean siempre los mismos en cada ejecución.
 
-## Repositorio que almacena el código funcional del trabajo #4 del curso de Simulación
+## Requisitos e Instalación
+Para hacer funcionar el simulador, necesitas tener instalado Python 3.7 o superior. Además, requiere dos librerías del entorno científico de Python: NumPy (para las funciones matemáticas y aleatorias) y Matplotlib (para generar los gráficos). Puedes instalar ambas abriendo tu terminal y ejecutando el comando: pip install numpy matplotlib.
 
-El archivo de Google Colab presenta el trabajo realizado para la última entrega de la materia Simulación, respondiendo un enunciado
-que busca averiguar el promedio en el cuál 3 cajeros sean o no suficientes para llevar a cabo la labor de atender un sistema de pagos
-del parqueadero comercial Supercentro.
+## Paso a Paso para la Ejecución
+* Guardar el archivo: Coloca el script modulo_4_actividad_didactica_2.py en una carpeta de tu computadora.
 
-A continuación, se encuentran aspectos importantes del código:
-* Se tienen la codificación necesaria para llevar a cabo los requerimientos del parqueadero.
-* Gráfico del día entero de trabajo que llevan a cabo los 3 cajeros
-* Gráfico del impacto que lleva la depuración de la ventana de calentamiento (o terminal1)
-* Gráfica para comparar los modelos M/M/1, M/G/1 y de Simulación Estocástica
+* Abrir la terminal: Viaja desde la consola hasta la carpeta donde guardaste el archivo.
 
-## Forma de ejecución
-Puede abrir y ejecutar el archivo si presiona en el botón de "Open in Colab" que se encuentra en la parte superior del código.
+* Ejecutar el comando: Escribe python modulo_4_actividad_didactica_2.py y presiona Enter.
 
-*Asegurese de ejecutar todas las celdas de código para que funcione correctamente*
+* Cerrar ventanas emergentes: El script mostrará tres gráficos en pantalla uno por uno; debes ir cerrando cada ventana para que el programa continúe y finalice correctamente.
+
+## Resultados y Gráficos Generados
+Al terminar, la consola mostrará un reporte con los tiempos promedio de espera y los cuellos de botella del sistema. Además, se guardarán automáticamente tres imágenes de alta calidad en tu carpeta:
+
+* estado_estable.png: Muestra cómo se estabilizan los tiempos tras eliminar las primeras 15 réplicas de "calentamiento" (fase transitoria).
+
+* antes_despues.png: Compara visualmente el comportamiento del Cajero 1 antes y después de limpiar los datos iniciales.
+
+* validacion_modelo.png: Compara los resultados de la simulación con las fórmulas teóricas de colas (M/M/1 vs M/G/1), demostrando que el modelo simulado se ajusta con precisión a la realidad matemática de una cola M/G/1.
